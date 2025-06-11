@@ -12,9 +12,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'Uploads')));
 
 const pool = new Pool({
   user: 'postgres',
-  host: 'localhost',
+  host: 'postgres',
   database: 'employee_db',
-  password: 'Veera@0134',
+  password: 'admin123',
   port: 5432,
 });
 
@@ -277,5 +277,5 @@ app.patch('/api/onboarding/:id', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://3.88.203.125:${PORT}`);
 });

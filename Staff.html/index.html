@@ -449,7 +449,7 @@
 
 async function fetchActiveEmployees() {
   try {
-    const response = await fetch('http://localhost:3000/api/employees/active');
+    const response = await fetch('http://3.88.203.125:3500/api/employees/active');
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${await response.text()}`);
     }
@@ -508,7 +508,7 @@ function renderEmployeeCards(employees) {
 
 async function showEmployeeDetails(employeeId) {
   try {
-    const response = await fetch(`http://localhost:3000/api/onboarding/${employeeId}`);
+    const response = await fetch(`http://3.88.203.125:3500/api/onboarding/${employeeId}`);
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${await response.text()}`);
     }
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('searchInput').addEventListener('input', async (e) => {
     const searchTerm = e.target.value.toLowerCase();
     try {
-      const response = await fetch('http://localhost:3000/api/employees/active');
+      const response = await fetch('http://3.88.203.125:3500/api/employees/active');
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${await response.text()}`);
       }
