@@ -1,0 +1,55 @@
+CREATE TABLE IF NOT EXISTS onboarding_records (
+  id SERIAL PRIMARY KEY,
+  emp_id VARCHAR(50),
+  full_name VARCHAR(100),
+  email VARCHAR(100),
+  phone VARCHAR(20),
+  department VARCHAR(50),
+  job_role VARCHAR(50),
+  job_start_date DATE,
+  street_address TEXT,
+  city VARCHAR(50),
+  state VARCHAR(50),
+  zip_code VARCHAR(20),
+  dob DATE,
+  status VARCHAR(20) DEFAULT 'Pending',
+
+  profile_pic_name VARCHAR(255),
+  profile_pic_path TEXT,
+  id_proof_name VARCHAR(255),
+  id_proof_path TEXT,
+  ssc_certificate_name VARCHAR(255),
+  ssc_certificate_path TEXT,
+  inter_certificate_name VARCHAR(255),
+  inter_certificate_path TEXT,
+  degree_certificate_name VARCHAR(255),
+  degree_certificate_path TEXT,
+  experience_letter_name VARCHAR(255),
+  experience_letter_path TEXT,
+
+  ssc_institution VARCHAR(100),
+  ssc_year VARCHAR(10),
+  inter_institution VARCHAR(100),
+  inter_year VARCHAR(10),
+  degree VARCHAR(100),
+  institution VARCHAR(100),
+  graduation_year VARCHAR(10),
+
+  bank_name VARCHAR(100),
+  mobile_number VARCHAR(20),
+  account_number VARCHAR(50),
+  ifsc_number VARCHAR(20),
+
+  prev_company_name VARCHAR(100),
+  prev_job_role VARCHAR(100),
+  prev_employment_start DATE,
+  prev_employment_end DATE,
+
+  emergency_contact_name VARCHAR(100),
+  emergency_contact_relationship VARCHAR(50),
+  emergency_contact_phone VARCHAR(20),
+  emergency_contact_address TEXT,
+
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+

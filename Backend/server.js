@@ -275,7 +275,7 @@ app.patch('/api/onboarding/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3500;
 app.listen(PORT, () => {
   console.log(`Server running on http://3.88.203.125:${PORT}`);
 });
