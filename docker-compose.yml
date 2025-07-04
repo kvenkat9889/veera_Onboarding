@@ -13,6 +13,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - veera_net
 
   backend:
     build: ./Backend
@@ -25,6 +27,8 @@ services:
       - ./Backend/Uploads:/app/Uploads
     environment:
       - NODE_ENV=production
+    networks:
+      - veera_net
 
   frontend:
     build: ./Frontend
@@ -33,6 +37,8 @@ services:
       - "7616:80"
     depends_on:
       - backend
+    networks:
+      - veera_net
 
   hr:
     build: ./HR
@@ -41,6 +47,8 @@ services:
       - "7617:80"
     depends_on:
       - backend
+    networks:
+      - veera_net
 
   staff:
     build: ./Staff
@@ -49,7 +57,16 @@ services:
       - "7618:80"
     depends_on:
       - backend
+    networks:
+      - veera_net
 
 volumes:
   pgdata:
+
+networks:
+  veera_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.3.0.0/16
 
